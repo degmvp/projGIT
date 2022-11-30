@@ -1,0 +1,5 @@
+gerar massa de dados exemplo
+0wrt.txt
+1wrt.txt
+2wrt.txt
+3wrt.txt etc..

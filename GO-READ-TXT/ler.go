@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	files, err := ioutil.ReadDir("/arquivos/data")
+	files, err := ioutil.ReadDir("J:/projGIT/GO-READ-TXT/data")
 	if err != nil {
 		log.Fatal(err)
 	}

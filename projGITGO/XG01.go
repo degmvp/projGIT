@@ -1,0 +1,35 @@
+package main
+
+//Rotina de leitura de diretorio e seus arquivos
+//Entrada informe a letra e diretorio desejado
+//Exemplo M:\app_advanced
+//Exemplo C:\BACKUP
+
+import (
+	"fmt"
+	"io"
+	"os"
+)
+
+func main() {
+
+	var via string
+	fmt.Scan(&via)
+
+	f, err := os.Open(via)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	for {
+		files, err := f.Readdir(1)
+		if err != nil {
+			if err == io.EOF {
+				break
+			}
+			fmt.Println(err)
+			continue
+		}
+		fmt.Println(files[0].Name(), files[0].IsDir())
+	}
+}
